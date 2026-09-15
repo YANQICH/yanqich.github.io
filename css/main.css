@@ -27,10 +27,11 @@ body {
     color: #222;
 }
 
+/* 关键改动：改为 swap，文字直接用系统字体先画出，绝不让图标孤立显示 */
 @font-face {
     font-family: 'Inter';
     font-style: normal;
-    font-display: auto;
+    font-display: swap;
     font-weight: 400;
     src: url('../fonts/Inter-Regular.woff2') format('woff2'),
          url('../fonts/Inter-Regular.woff') format('woff');
@@ -39,7 +40,7 @@ body {
 @font-face {
     font-family: 'Inter';
     font-style: normal;
-    font-display: auto;
+    font-display: swap;
     font-weight: 800;
     src: url('../fonts/Inter-Bold.woff2') format('woff2'),
          url('../fonts/Inter-Bold.woff') format('woff');
@@ -68,6 +69,17 @@ a {
     text-align: center;
 }
 
+@keyframes enter {
+    from {
+        opacity: 0;
+        transform: translateY(3px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 .content {
     display: flex;
     flex-direction: column;
@@ -75,6 +87,7 @@ a {
     align-items: center;
     justify-content: center;
     margin: 0;
+    animation: enter 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 .footer {
