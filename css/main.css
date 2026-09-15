@@ -27,7 +27,6 @@ body {
     color: #222;
 }
 
-/* 关键改动：改为 swap，文字直接用系统字体先画出，绝不让图标孤立显示 */
 @font-face {
     font-family: 'Inter';
     font-style: normal;
